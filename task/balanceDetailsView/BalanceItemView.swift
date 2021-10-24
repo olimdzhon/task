@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct BalanceView: View {
-    let balace: Balance
+struct BalanceItemView: View {
+    let balance: Balance
     let color: Color
     var headerView: some View {
         HStack {
-            Text(payment.date)
+            Text(balance.date)
                 .font(.title2)
                 .fontWeight(.bold)
             Spacer()
@@ -25,7 +25,7 @@ struct BalanceView: View {
                 .padding(.top,10)
                 .padding(.bottom,10)
             HStack(spacing: 10) {
-                Image(systemName: payment.imageName)
+                Image(systemName: balance.imageName)
                     .font(.title2)
                     .foregroundColor(.white)
                     .frame(width: 50, height: 50)
@@ -35,18 +35,18 @@ struct BalanceView: View {
                     )
                 VStack{
                     HStack{
-                        Text(payment.name)
+                        Text(balance.name)
                             .fontWeight(.semibold)
                         Spacer()
-                        Text(payment.cost)
+                        Text(balance.cost)
                     }
                     HStack{
-                        Text(payment.paymentType)
+                        Text(balance.paymentType)
                             .kerning(1.0)
                             .font(.callout)
                             .foregroundColor(.gray)
                         Spacer()
-                        Text(payment.cardType)
+                        Text(balance.cardType)
                             .kerning(1.0)
                             .font(.callout)
                             .foregroundColor(.gray)
@@ -57,8 +57,8 @@ struct BalanceView: View {
     }
 }
 
-struct PaymentView_Previews: PreviewProvider {
+struct BalanceItemView_Previews: PreviewProvider {
     static var previews: some View {
-        PaymentListView().environmentObject(Wallet())
+        BalanceListView().environmentObject(Wallet())
     }
 }

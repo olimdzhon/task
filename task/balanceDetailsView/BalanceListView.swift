@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct PaymentListView: View {
+struct BalanceListView: View {
     @EnvironmentObject var wallet: Wallet
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 15) {
-                    ForEach(wallet.payments.indices, id: \.self) { index in
-                        PaymentView(payment: wallet.payments[index], color: wallet.colors[index])
+                    ForEach(wallet.balances.indices, id: \.self) { index in
+                        BalanceItemView(balance: wallet.balances[index], color: wallet.colors[index])
                     }
                 
             }
@@ -22,9 +22,9 @@ struct PaymentListView: View {
     }
 }
 
-struct PaymentDetails_Previews: PreviewProvider {
+struct BalanceListView_Previews: PreviewProvider {
     static var previews: some View {
-        PaymentListView()
+        BalanceListView()
             .environmentObject(Wallet())
     }
 }

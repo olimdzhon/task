@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct Tab3: View {
+    
+    var headerView: some View {
+        HStack {
+            Text("Services")
+                .font(.title)
+                .fontWeight(.bold)
+                .padding(.top, 20)
+                .padding(.leading, 20)
+                .padding(.bottom, 10)
+            Spacer()
+        }
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 0) {
+            headerView
+            GridLayout()
+        }
     }
 }
 

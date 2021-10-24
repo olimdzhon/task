@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Payment: Hashable {
+struct Balance: Hashable {
     let date: String
     let imageName: String
     let name: String
